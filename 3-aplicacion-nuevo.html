@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .menor{
+            background-color: red;
+        }
+
+        .mayor{
+            background-color: lawngreen;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label for="">Edad</label>
+        <input id="input" type="input" type="number">
+        <button id¡d id="btn">ENTRAR</button>
+        <div id="resultado">...</div>
+    </div>
+
+
+    <script>
+        let input = document.querySelector("#input") 
+        let button = document.querySelector("#btn") 
+
+        console.log (input) //Aparecer el input dentro de la consola
+        console.log (btn) //Aparecer el button dentro de la consola
+        btn.addEventListener("click", mostraValor ) //Al click al boton se mostrara el valor dentro del function mostraValor
+        function mostraValor(){ 
+            const valor = input.value // Crear una variable para que el if coga el valor
+            console.log (valor) // Empezar a mostrar desde la consola el valor que hay dentro del variable del valor
+
+            if(valor >= 18){ //Sí es lo que pide saldra:
+                console.log("Dentro!") //Poner en la consola (Dentro!)
+                resultado.classList.add ("mayor") //Añadir clase al "resultado"
+                resultado.classList.remove ("menor") //Borrar al estilo menor que estaba antes"
+                resultado.innerHTML = valor //Cambiar el contenido HTML desde el JAVA al valor que tiene el input
+
+            } else { //Si es diferente
+                console.log ("Fuera!") //Poner en la consola (FUERA!)
+                resultado.classList.add ("menor") //Añadir clase al "resultado"
+                resultado.classList.remove ("mayor") //Borrar al estilo mayor que estaba antes
+                resultado.innerHTML = valor //Cambiar el contenido HTML desde el JAVA al valor que tiene el input
+            }
+        }
+    </script>
+</body>
+</html>

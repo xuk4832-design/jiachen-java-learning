@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exercicis JS</title>
+    <style>
+
+
+      .caja {
+        border: 2px solid #333;
+        padding: 1rem;
+        margin: 0.5rem;
+        cursor: pointer;
+      }
+
+      .destacado {
+        background-color: #ffeb3b;
+      }
+
+      .oculto {
+        display: none;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <h1 id="titulo">Exercicis JavaScript</h1>
+    <div id="contenido" class="caja">Contingut inicial</div>
+    <input type="text" id="entrada" placeholder="Escriu aquí" value="" />
+    <button id="btn">Clica'm</button>
+    <div id="resultado"></div>
+
+    <script>
+      // El teu codi aquí
+        let nom = "Jiachen" // el "nom" tendra como significado "Jiachen"
+        let cognom = "Bai" // el "cognom" tendra como significado "Bai"
+        console.log ("Hola, món!") // Se me muestra "Hola, Món!" a mi console
+        console.log ("El meu nom es" + " " + nom + " " + cognom); //Junta las palabras con las ID
+        
+        function saluda (nom) { //Bloque reutilizable para no repetir muchas veces un contenido
+        console.log("Hola" +" "+ nom + "!");
+    }
+        saluda("Marc")
+        saluda("Cobarde")
+        saluda("Diego")
+
+        const div = document.querySelector("#contenido"); //Selecciono a la div 
+        div.innerHTML = "<strong>He canviat el text!</strong>"; //#1 uso //Cogo el codigo div que esta en el HTML
+        div.classList.add ("destacado") //Añadir clase al "div"
+        
+        const input = document.querySelector("#entrada") // Hace una constante en la clase dentro de la entrada
+        const button = document.querySelector("#btn") // Hace una constante en la clase dentro de button
+
+        function mostraValor(){ //Lee lo que el usuario escribió en el input. Lo muestra en la consola.
+        console.log (input.value)
+        }
+
+        btn.addEventListener("click", mostraValor) // Cada vez que haga "click" se le contara al valor más lo que hay adentro del "mostraValor"
+
+        let comptador = 0
+
+        function incrementa(){ //#2 uso 
+            comptador = comptador + 1;
+            div.innerHTML = "Has clicat" + " " + comptador + " " + "vegades";
+        }
+
+        div.addEventListener ("click", incrementa); // cuenta las veces que se le da click al contenido
+
+        const resultado = document.querySelector("#resultado"); 
+
+        function copiaInput(){
+          if(input.value === ""){
+          resultado.innerHTML = "No has escrit res"
+        } else {
+          resultado.innerHTML = input.value 
+        }
+      }
+
+      btn.addEventListener("click", copiaInput)
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <label>Coches</label>
+    <select id="coches" name="coches">
+        <option value="peugeot">Peugeot</option>
+        <option value="renault">Renault</option>
+        <option value="toyota">Toyota</option>
+        <option value="mg">MG</option>
+    </select>
+
+    <button id="btn">Quiero este</button> 
+
+    <div id="resultado">
+        <img id="imagen" src="" alt="" width="300"> 
+    </div>
+
+    <script>
+        let coches = document.querySelector("#coches");
+        let btn = document.querySelector("#btn");
+        let imagen = document.querySelector("#imagen");
+
+        btn.addEventListener("click", mostrarValor);
+
+        function mostrarValor() {
+            const valor = coches.value;  // obtenemos el value seleccionado
+            console.log(valor);
+
+            if (valor === "peugeot") { // si el valor es la clase peugeot se utilizara el nombre de la imagen cual le corresponde
+                imagen.src = "imagenes-4/peugeot.jpg"; // en la imagen del src como el src es vacio, se utilizara el resultado de la direccion
+            } 
+            else if (valor === "renault") {
+                imagen.src = "imagenes-4/Honshi.avif";
+            } 
+            else if (valor === "toyota") {
+                imagen.src = "imagenes-4/toyota.png";
+            } 
+            else if (valor === "mg") {
+                imagen.src = "imagenes-4/MG.avif";
+            }
+        }
+    </script>
+
+</body>
+</html>
